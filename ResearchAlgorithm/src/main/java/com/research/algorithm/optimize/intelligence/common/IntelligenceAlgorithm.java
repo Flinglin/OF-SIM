@@ -73,12 +73,14 @@ public abstract class IntelligenceAlgorithm extends Algorithm {
         initialAlgorithm();
         rankIndividualByFitness(population.getIndividuals());
         setBestSolution();
-        log.info("the Fitness of {}-th is：{}", currentIteration, population.getIndividuals().getFirst().getFitness());
         do {
             population = updatePopulation(population);
             rankIndividualByFitness(population.getIndividuals());
             setBestSolution();
-            log.info("the Fitness of {}-th is：{}", currentIteration, population.getIndividuals().getFirst().getFitness());
+            if (this.currentIteration>this.iterations) {
+                double[] fitness=population.getIndividuals().getFirst().getFitness().getValue();
+                log.info("the best solution is：water deficit: {}, surplus water: {}", fitness[0]*10000,fitness[1]*10000);
+            }
         } while (terminate());
         return super.getInformation();
     }
