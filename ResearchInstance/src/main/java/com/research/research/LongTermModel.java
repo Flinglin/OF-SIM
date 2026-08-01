@@ -12,7 +12,7 @@ import java.util.ArrayList;
 public class LongTermModel {
 
     public static void main(String[] args) throws IOException {
-        String path = "ResearchInstance/src/main/resources/input_data.xlsx";
+        String path = "ResearchInstance/src/main/resources/ofsim_input_data.xlsx";
         Object[][] param = ExcelTool.readXlsxExcel(path, "project");
         ResearchProject project = ResearchProject.builder()
                 .startTime(NumberUtil.objectToLocalDateTime(param[0][0]))

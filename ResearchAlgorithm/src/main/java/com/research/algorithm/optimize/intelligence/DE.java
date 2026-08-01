@@ -6,6 +6,7 @@ import com.research.algorithm.optimize.enums.CompareIndividualType;
 import com.research.algorithm.optimize.enums.ValueType;
 import com.research.algorithm.optimize.intelligence.common.IntelligenceAlgorithm;
 
+import com.research.algorithm.optimize.utils.Information;
 import com.research.utils.numpy.RandomUtil;
 import lombok.Builder;
 import lombok.Getter;
@@ -30,8 +31,8 @@ public class DE extends IntelligenceAlgorithm {
     @Builder.Default
     RandomDataGenerator generator = new RandomDataGenerator();
 
-    private final Random selectRand = new Random();
-    private final Random switchRand = new Random();
+    private final Random selectRand = new Random(123456L);
+    private final Random switchRand = new Random(123456L);
 
     @Override
     public Population updatePopulation(Population population) {
@@ -91,5 +92,10 @@ public class DE extends IntelligenceAlgorithm {
     public Individual updateIndividual(Population population, Individual individual, Individual otherIndividual) {
         return null;
     }
-
+    @Override
+    public Information execute(){
+        long seed = 123456L;
+        generator.reSeed(seed);
+        return  super.execute();
+    }
 }

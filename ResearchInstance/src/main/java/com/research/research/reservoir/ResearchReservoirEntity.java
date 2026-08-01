@@ -288,7 +288,7 @@ public class ResearchReservoirEntity extends ReservoirEntity {
                 }
             } else {
                 if (Double.isNaN(super.storageToLevelCurve.getV1ByV0(nextStorage))) {
-                    System.out.println(0);
+                    throw new RuntimeException("check the project parameter");
                 }
                 super.reservoirLevel[time + 1] = super.storageToLevelCurve.getV1ByV0(nextStorage);
                 super.inFlow[time] = 0;

@@ -71,7 +71,7 @@ public class ResearchOptimizationProblem extends Problem {
                 sumintake += this.simulation.getIntakeEntities().get(i).getTruthIntakeFlow()[r];
                 sumdemand += this.simulation.getIntakeEntities().get(i).getPlanIntakeFlow()[r];
             }
-            waterShortage[r] = 0.7*Math.abs(sumdemand - sumintake) * 10 * 24 * 3600;
+            waterShortage[r] = Math.abs(sumdemand - sumintake) * 10 * 24 * 3600;
         }
         for (int i = 0; i < this.simulation.getIntakeEntities().size(); i++) {
             double[] intakeFlow = this.simulation.getIntakeEntities().get(i).getTruthIntakeFlow();

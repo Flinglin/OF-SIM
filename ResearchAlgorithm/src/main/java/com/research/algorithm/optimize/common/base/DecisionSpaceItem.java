@@ -2,6 +2,7 @@ package com.research.algorithm.optimize.common.base;
 
 import lombok.Data;
 import java.lang.Math;
+import java.util.Random;
 
 @Data
 public class DecisionSpaceItem {
@@ -9,7 +10,7 @@ public class DecisionSpaceItem {
     private double minValue;
 
     private double maxValue;
-
+    private static final Random switchRand = new Random(123456L);
     public DecisionSpaceItem(double minValue, double maxValue) {
         this.minValue = minValue;
         this.maxValue = maxValue;
@@ -19,7 +20,7 @@ public class DecisionSpaceItem {
     }
 
     public double getRandomValue() {
-        return Math.random() * (maxValue - minValue) + minValue;
+        return switchRand.nextDouble()* (maxValue - minValue) + minValue;
     }
 
     public boolean checkRange(double value){
