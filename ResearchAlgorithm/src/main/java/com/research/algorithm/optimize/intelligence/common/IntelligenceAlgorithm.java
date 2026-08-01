@@ -79,7 +79,7 @@ public abstract class IntelligenceAlgorithm extends Algorithm {
             setBestSolution();
             if (this.currentIteration>this.iterations) {
                 double[] fitness=population.getIndividuals().getFirst().getFitness().getValue();
-                log.info("the best solution is：water deficit: {}, surplus water: {}", fitness[0]*10000,fitness[1]*10000);
+                System.out.println("the best solution is：water deficit: "+fitness[0]*10000+", surplus water: "+fitness[1]*10000);
             }
         } while (terminate());
         return super.getInformation();

@@ -1,0 +1,79 @@
+package com.research.frsim.adapter.wdp.enumerate;
+
+public enum BoundaryTypeEnum {
+
+	CANAL_STORAGE("10101"),
+	CANAL_INFLOW("10102"),
+	GATE_Q("10201"),
+
+	GATE_HUP("10202"),
+
+	GATE_HDOWN("10203"),
+
+	GATE_OPEN("10204"),
+
+	GATE_MAXFLOW("10205"),
+
+	GATE_MINFLOW("10206"),
+
+	GATE_UPLEVEL("10207"),
+
+	GATE_DOWNLEVEL("10208"),
+
+	INTAKE_DEMANDQ("10401"),
+
+	INTAKE_INTAKEQ("10402"),
+
+	INTAKE_MAXFLOW("10403"),
+
+	INTAKE_MINFLOW("10404"),
+
+	INTAKE_MAXFLOWV("10405"),
+
+	INTAKE_MINFLOWV("10406"),
+
+	PUMP_FLOWQ("10301"),
+
+	PUMP_UPLEVEL("10302"),
+
+	PUMP_DOWNLEVEL("10303"),
+
+	PUMP_MAXFLOW("10304"),
+
+	PUMP_MINFLOW("10305"),
+
+	PUMP_MAXVOLUME("10306"),
+
+	PUMP_MINVOLUME("10307"),
+
+	RESERVOIR_INFLOWQ("10501"),
+
+	RESERVOIR_MININFLOW("10502"),
+
+	RESERVOIR_MAXINFLOW("10503"),
+
+	RESERVOIR_MINOUTFLOW("10504"),
+
+	RESERVOIR_WATERLEVEL("10506"),
+
+	RESERVOIR_MAXOUTFLOW("10505"),
+
+	RESERVOIR_MAXLEVEL("10507"),
+
+	RESERVOIR_MINLEVEL("10508");
+	private String type;
+
+	private BoundaryTypeEnum(String type) {
+		this.type = type;
+	}
+
+	public String getType() {
+		return type;
+	}
+
+	public void setType(String type) {
+		this.type = type;
+	}
+
+
+}

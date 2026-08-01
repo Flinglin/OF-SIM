@@ -13,11 +13,13 @@ Ministry of Water Resources of China official website: http://www.mwr.gov.cn/
 National Earth System Science Data Center: https://www.geodata.cn/data/index.html
 Anhui provincial group limited for Yangtze-to-Huaihe water diversion: https://www.ahyjjh.com.cn/
 
-We also provide the test data (https://doi.org/10.6084/m9.figshare.31889719).
+We also provide the desensitized data (https://doi.org/10.6084/m9.figshare.31889719).
 
 ## Use
 
-the main function in the com.research.instance.LongTermModel. 
+the main function of of-sim in the com.research.instance.LongTermModel#main.
+the main function of fr-sim in the com.research.frsim.FRSIM#main.
+the main function of apca in the com.research.apca.LongTermModel#main.
 
 ## Project structure
 
@@ -38,6 +40,11 @@ the flowControl function mainly determines when to execute OFT. Then, the adjust
 
 the OFT and OFR components is in the com.research.instance.gate.ResearchReservoirEntity#reservoirLevelControl, com.research.instance.gate.ResearchReservoirEntity#flowControl and com.research.instance.gate.ResearchReservoirEntity#adjustIntakeFlow
 the flowControl and reservoirLevelControl functions mainly determine when to execute OFT. Then, the adjustIntakeFlow function performs the function of OFR.
+
+### Comparison method
+
+The fr-sim code is located in ResearchInstance/src/main/java/com/research/frsim
+The apca code is located in ResearchInstance/src/main/java/com/research/apca
 
 ## Prerequisites
 
